@@ -25,13 +25,13 @@ passes(list, n) =
 bubSort(list) = 
 	passes(list, length list)
 
---Question 1:
+--determines the smallest prime factor
 smallestPrimeFactor :: Integer -> Integer
 smallestPrimeFactor i =
 	if 143 `mod` i == 0 then i
 	else smallestPrimeFactor (i + 1)
 
---Question 2:
+--spanstring
 spanString :: (Char, [Char]) -> [Char]
 spanString (a, b) = 
 	if null b then []
@@ -39,55 +39,47 @@ spanString (a, b) =
 	if head b == a then []
 		else head b : spanString (a, tail b)
 
---Question 3
+--triples
 triples :: [(a, b)] -> [(a, b, a)]
 triples n = 
 	if null n then []
 	else (fst (head n), snd (head n), fst (head n)) : triples (tail n)
 
---Question 4
---A.) type this = [(Integer, Float)]
---typeA :: [(Integer, Float)]
---typeA [(a, b)] = [(a, b), (a, b)]
-
---B.) type this = (Char, [Integer]) -> (Integer, Char)
+--type this = (Char, [Integer]) -> (Integer, Char)
 typeB :: (Char, [Integer]) -> (Integer, Char)
 typeB (a, [b]) = (b, a)
-
---C.) data that = see Float | say Integer
---    type this = (Bool, [that])
 
 --D.) type this = (a, b) -> (b, b)
 typeD:: (a, b) -> (b, b)
 typeD (a, b) = (b, b)
 
---Question 2 afters
+--afters
 afters (_, []) = []
 afters (key, (x : y) = if x = key 
 	then x : (afters (key, y))
 	else afters (key, y)
 
---Question 1
+--neverFollows
 neverFollows :: Eq a => (a, a, [a]) -> Bool
 neverFollows (x, y, lst) =
 	if tail lst == [] then True
 	else if head lst == x && head (tail lst) == y then False
 	else neverFollows (x, y, tail lst)
 
---Question 2
+--Ord
 greater :: Ord a => (a, [a]) -> [a]
 greater (e, lst) =
 	if lst == [] then lst
 	else if head lst > e then head lst : greater(e,	tail lst)
 	else greater (e, tail lst)
 
---Question 4
+--inclist
 inclist :: [Integer] -> Integer -> [Integer]
 inclist lst a =
 	if lst == [] then lst
 	else map(a+)lst
 
---Question 5
+--square sum
 sqsum :: [Integer] -> Integer
 sqsum lst =
 	foldr (+) 0 (map(^2)lst)
