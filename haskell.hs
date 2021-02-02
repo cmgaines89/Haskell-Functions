@@ -1,10 +1,6 @@
 --Corinne Gaines
---COSC 350
-
---bubble sort
 
 --function to make a swap pass
-
 swapPass(list) =
 	if null list || null(tail list) then
 		list
