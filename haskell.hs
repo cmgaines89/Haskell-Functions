@@ -1,4 +1,4 @@
---Corinne Gaines
+--C. Gaines
 
 --function to make a swap pass
 swapPass(list) =
@@ -45,7 +45,7 @@ triples n =
 typeB :: (Char, [Integer]) -> (Integer, Char)
 typeB (a, [b]) = (b, a)
 
---D.) type this = (a, b) -> (b, b)
+--type this = (a, b) -> (b, b)
 typeD:: (a, b) -> (b, b)
 typeD (a, b) = (b, b)
 
